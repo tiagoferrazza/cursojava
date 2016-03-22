@@ -1,4 +1,5 @@
 /*
+ * 
  * Globalcode - "The Developers Company"
  * 
  * Academia do Java
@@ -11,28 +12,28 @@ public class Agencia {
     private int banco;
 
     /**
-     * @return Numero do banco
+     * @param num
+     *            Numero da agencia
+     * @param bc
+     *            banco ao qual a agencia pertence
+     */
+    public Agencia(String numero, int banco) {
+        this.setNumero(numero);
+        this.setBanco(banco);
+    }
+
+    /**
+     * @return numero do banco
      */
     public int getBanco() {
         return banco;
     }
 
     /**
-     * @return Numero da agencia
+     * @return numero da agencia
      */
     public String getNumero() {
         return numero;
-    }
-
-    /**
-     * @param num
-     *            Numero da agencia
-     * @param bc
-     *            Banco ao qual a agencia pertence
-     */
-    public void inicializaAgencia(String num, int bc) {
-        this.numero = num;
-        this.banco = bc;
     }
 
     /**
@@ -40,15 +41,15 @@ public class Agencia {
      *            banco
      */
     public void setBanco(int b) {
-        this.banco = b;
+        banco = b;
     }
 
     /**
-     * @param numero
+     * @param num
      *            Numero da agencia
      */
-    public void setNumero(String numero) {
-        this.numero = numero;
+    public void setNumero(String num) {
+        numero = num;
     }
 
     /**

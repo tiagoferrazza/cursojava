@@ -3,8 +3,7 @@
  * 
  * Academia do Java
  * 
- * Nao e necessario fazer nenhuma alteracao nesta classe
- * 
+ * 1) Crie um construtor para classe Cliente e remova o metodo inicializaCliente
  */
 public class Cliente {
 
@@ -17,9 +16,10 @@ public class Cliente {
      * @param cpfCliente
      *            cpf do cliente
      */
-    public void inicializaCliente(String nomeCliente, String cpfCliente) {
-        this.cpf = cpfCliente;
-        this.nome = nomeCliente;
+
+    public Cliente(String nome, String cpf){
+        this.nome = nome;
+        this.cpf = cpf;
     }
 
     /**
@@ -38,7 +38,7 @@ public class Cliente {
 
     /**
      * @param cpf
-     *            CPF do cliente
+     *            CPF
      */
     public void setCpf(String cpf) {
         this.cpf = cpf;
@@ -57,8 +57,8 @@ public class Cliente {
      */
     public void imprimeDados() {
         System.out.println("----------------------");
-        System.out.println("Nome do cliente :" + this.nome);
-        System.out.println("CPF:" + this.cpf);
+        System.out.println("Nome do cliente :" + getNome());
+        System.out.println("CPF:" + getCpf());
         System.out.println("----------------------");
     }
 }

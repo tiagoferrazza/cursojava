@@ -3,10 +3,7 @@
  * 
  * Academia do Java
  * 
- * 1) Sobrecarregue o metodo inicializaConta permitindo que ele 
- * seja executado sem informar o saldo, e neste caso o saldo inicial
- * devera ser 0.
- * 
+ * 1) Crie um construtor para cada metodo inicializaConta da classe Conta e remova os metodos inicializaConta
  */
 public class Conta {
 
@@ -28,17 +25,34 @@ public class Conta {
      * @param bc
      *            Banco a qual a agencia pertence
      */
-    public void inicializaConta(double saldoInicial, String num, String tit, String ag, int bc) {
-        this.saldo = saldoInicial;
-        this.numero = num;
-        this.titular = tit;
-        this.agencia = ag;
-        this.banco = bc;
+
+    public Conta(String numero,String titular,String agencia,int banco){
+        this.numero = numero;
+        this.titular = titular;
+        this.agencia = agencia;
+        this.banco = banco;
+    }
+
+    public Conta(double saldo,String numero,String titular,String agencia,int banco){
+        this(numero,titular,agencia,banco);
+        this.saldo = saldo;
     }
 
     /**
+     * @param num
+     *            Numero da conta
+     * @param tit
+     *            Titular da conta
+     * @param ag
+     *            Agencia a qual a conta pertence
+     * @param bc
+     *            Banco a qual a agencia pertence
+     */
+    
+
+    /**
      * @param valor
-     *            Valor a ser sacado da conta
+     *            valor a ser sacado da conta
      */
     public void saque(double valor) {
         System.out.println("Realizando saque de R$ " + valor + " da conta " + numero);
@@ -53,8 +67,8 @@ public class Conta {
     }
 
     /**
-     * @param valor
-     *            Valor a ser depositado da conta
+     * @param valor:
+     *            valor a ser depositado da conta
      */
     public void deposito(double valor) {
         System.out.println("Realizando deposito de R$" + valor + " da conta " + numero);
@@ -77,35 +91,35 @@ public class Conta {
     }
 
     /**
-     * @return Saldo da conta
+     * @return saldo da conta
      */
     public double getSaldo() {
-        return this.saldo;
+        return saldo;
     }
 
     /**
-     * @return Numero da agencia da conta
+     * @return agencia numero da agencia da conta
      */
     public String getAgencia() {
         return agencia;
     }
 
     /**
-     * @return Numero do banco da conta
+     * @return banco numero do banco da conta
      */
     public int getBanco() {
         return banco;
     }
 
     /**
-     * @return Numero da conta
+     * @return numero numero da conta
      */
     public String getNumero() {
         return numero;
     }
 
     /**
-     * @return Nome do titular da conta
+     * @return titular nome do titular da conta
      */
     public String getTitular() {
         return titular;
@@ -142,10 +156,10 @@ public class Conta {
     public void setNumero(String numero) {
         this.numero = numero;
     }
-    
+
     /**
      * @param titular
-     *            Nome do titular da conta
+     *            nome do titular da conta
      */
     public void setTitular(String titular) {
         this.titular = titular;
